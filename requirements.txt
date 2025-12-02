@@ -1,11 +1,5 @@
 langchain>=0.2.0
 langchain-community>=0.2.0
 langchain-openai>=0.1.0
-chromadb>=0.4.24
 openai>=1.40.0
-beautifulsoup4>=4.12.2
-requests>=2.31.0
-pandas>=2.0.3
 streamlit>=1.36.0
-tiktoken>=0.7.0
-python-dotenv>=1.0.1
