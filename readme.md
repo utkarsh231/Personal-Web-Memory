@@ -58,6 +58,7 @@ personal-web-memory/
     ├── profile.json           (optional)
     └── chroma_db/             (auto-created)
 
+```
 
 ### Setup Instructions
 	1.	Create virtual environment
