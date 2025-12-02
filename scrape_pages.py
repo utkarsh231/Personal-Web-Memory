@@ -7,13 +7,13 @@ import time
 def scrape_text(url):
     try:
         r = requests.get(url, timeout=5)
-        soup = BeautifulSoup(r.contents, 'html.parser')
+        soup = BeautifulSoup(r.text, 'html.parser')
 
         for tag in soup(['script', 'style', 'nav', 'footer', 'header']):
             tag.decompose()
 
         text = soup.get_text(separator=" ")
-        return " " .join
+        return " " .join(text.split())
     except Exception as e:
         return ""
     
