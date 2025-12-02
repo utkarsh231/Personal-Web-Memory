@@ -61,21 +61,21 @@ personal-web-memory/
 ```
 
 ### Setup Instructions
-	1.	Create virtual environment
+1.	Create virtual environment
 
-python3 -m venv .venv
-source .venv/bin/activate
+    python3 -m venv .venv
+    source .venv/bin/activate
 
-	2.	Install dependencies
+2.	Install dependencies
 
-pip install --upgrade pip
-pip install -r requirements.txt
+    pip install --upgrade pip
+    pip install -r requirements.txt
 
-	3.	Add your OpenAI API key
+3.	Add your OpenAI API key
 
 Create .env or export manually:
 
-export OPENAI_API_KEY=your_key_here
+    export OPENAI_API_KEY=your_key_here
 
 
 ⸻
