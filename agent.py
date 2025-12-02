@@ -1,7 +1,11 @@
 from langchain_community.vectorstores import Chroma
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
-from langchain.chains import RetrievalQA
 from langchain.prompts import PromptTemplate
+
+try:
+    from langchain.chains import RetrievalQA
+except ImportError: 
+    from langchain.chains.retrieval_qa.base import RetrievalQA
 
 
 def load_agent():
