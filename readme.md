@@ -80,10 +80,10 @@ Create .env or export manually:
 
 ⸻
 
-Extract Your Chrome History
-
+### Extract Your Chrome History
+```
 python extract_history.py
-
+```
 Produces:
 
 data/chrome_history.csv
@@ -91,10 +91,10 @@ data/chrome_history.csv
 
 ⸻
 
-Scrape Visited Pages
-
+### Scrape Visited Pages
+```
 python scrape_pages.py
-
+```
 Produces:
 
 data/scraped_pages.jsonl
@@ -103,10 +103,10 @@ Includes fallback logic: if pages block scraping and return empty content, the s
 
 ⸻
 
-Build the Vector Index
-
+### Build the Vector Index
+```
 python build_index.py
-
+```
 This:
 	•	Embeds each page using OpenAI’s text-embedding-3-small
 	•	Stores them inside a persistent Chroma DB
@@ -119,10 +119,10 @@ data/chroma_db/
 
 ⸻
 
-Run the Personal Web Memory Agent
-
+### Run the Personal Web Memory Agent
+```
 python agent.py
-
+```
 This loads the index and answers a sample query.
 The agent uses a custom retrieval-grounded prompt:
 	•	It must answer only using retrieved context
@@ -131,10 +131,10 @@ The agent uses a custom retrieval-grounded prompt:
 
 ⸻
 
-Run the Streamlit App
-
+### Run the Streamlit App
+```
 streamlit run streamlit_app.py
-
+```
 Open your browser at:
 
 http://localhost:8501
