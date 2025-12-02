@@ -78,8 +78,9 @@ Create .env or export manually:
     export OPENAI_API_KEY=your_key_here
 ```
 ---
+### Steps
 
-### 1. Extract Your Chrome History
+#### 1. Extract Your Chrome History
 ```
 python extract_history.py
 ```
@@ -89,7 +90,7 @@ data/chrome_history.csv
 
 
 
-### 2. Scrape Visited Pages
+#### 2. Scrape Visited Pages
 ```
 python scrape_pages.py
 ```
@@ -100,7 +101,7 @@ data/scraped_pages.jsonl
 Includes fallback logic: if pages block scraping and return empty content, the system uses the page title + URL so every page still contributes meaningfully to the memory.
 
 
-### 3. Build the Vector Index
+#### 3. Build the Vector Index
 ```
 python build_index.py
 ```
@@ -115,7 +116,7 @@ data/chroma_db/
 
 
 
-### 4. Run the Personal Web Memory Agent
+#### 4. Run the Personal Web Memory Agent
 ```
 python agent.py
 ```
@@ -126,7 +127,7 @@ The agent uses a custom retrieval-grounded prompt:
 "I couldn’t find that in your browsing history."
 
 
-### 5. Run the Streamlit App
+#### 5. Run the Streamlit App
 ```
 streamlit run streamlit_app.py
 ```
@@ -137,16 +138,16 @@ http://localhost:8501
 You will see a single input box.
 Ask questions like:
 
-✅ Example queries
-	- 	“What product pages did I visit recently?”
-	- 	“Show me the pages I viewed about AirPods.”
-	- 	“What pages did I read about watches?”
-	- 	“Which shopping sites did I open this week?”
-	- 	“Summarize the product pages I looked at.”
+Example queries: 
+- 	“What product pages did I visit recently?”
+- 	“Show me the pages I viewed about AirPods.”
+- 	“What pages did I read about watches?”
+- 	“Which shopping sites did I open this week?”
+- 	“Summarize the product pages I looked at.”
 
 ---
 
-### Agent Prompting Logic
+#### Agent Prompting Logic
 
 The RetrievalQA agent is intentionally simple:
 	- 	Query → embed → retrieve top-k documents
@@ -157,7 +158,7 @@ The RetrievalQA agent is intentionally simple:
 
 
 
-### Debugging Tools Included
+#### Debugging Tools Included
 	- 	build_index.py prints how many documents were added
 	- 	agent.py (optional mode) prints source documents used
 	- 	Scraper includes error handling for blocked websites
